@@ -1,0 +1,142 @@
+/* ============================================================
+   Base Variables
+   ============================================================ */
+:root {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+  /* Core theme */
+  --bg: white;
+  --text: black;
+
+  /* Buttons */
+  --button-bg: black;
+  --button-text: white;
+  --button-hover-bg: white;
+  --button-hover-text: black;
+
+  /* Header + layout variables (missing in your original) */
+  --accent-bg: #f5f5f5;
+  --accent-text: black;
+  --accent: #ddd;
+
+  --border: #ccc;
+  --border-width: 1px;
+  --content-width: 60ch;
+  --standard-border-radius: 4px;
+
+  --fade-speed: 0.3s;
+}
+
+/* ============================================================
+   Dark Mode (auto)
+   ============================================================ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111;
+    --text: #eee;
+
+    --button-bg: #eee;
+    --button-text: #111;
+    --button-hover-bg: #333;
+    --button-hover-text: #fff;
+
+    --accent-bg: #222;
+    --accent-text: #fff;
+    --accent: #444;
+
+    --border: #555;
+  }
+}
+
+/* ============================================================
+   Body
+   ============================================================ */
+body { 
+  width: 50%;
+  margin: 0 auto;
+  background-color: var(--bg); 
+  color: var(--text); 
+  transition: background-color var(--fade-speed), color var(--fade-speed);
+  padding: 0;
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+button {
+  all: unset;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border-radius: var(--standard-border-radius);
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: background-color var(--fade-speed), color var(--fade-speed);
+}
+
+button:hover {
+  background-color: var(--button-hover-bg);
+  color: var(--button-hover-text);
+}
+
+/* ============================================================
+   Adobe‑Style Header Layout
+   ============================================================ */
+
+body > header {
+  background-color: var(--accent-bg);
+  border-bottom: var(--border-width) solid var(--border);
+  color: var(--accent-text);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0.75rem 1.5rem;
+  grid-column: 1 / -1;
+}
+
+/* Left: Logo */
+header .logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--accent-text);
+}
+
+/* Center: Main Navigation */
+header nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+header nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.95rem;
+  padding: 0.25rem 0;
+  transition: color var(--fade-speed);
+}
+
+header nav a:hover {
+  color: var(--accent-text);
+}
+
+/* Right: Actions (apps icon, sign in, etc.) */
+header .actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+header .actions button {
+  padding: 6px 10px;
+  border-radius: var(--standard-border-radius);
+}
