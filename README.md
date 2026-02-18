@@ -213,3 +213,7 @@ header .actions button {
   </nav>
 </header>
 ```
+
+# Credits
+
+simple.css: Provides half of the header code
